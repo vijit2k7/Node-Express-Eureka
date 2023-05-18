@@ -1,11 +1,10 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
 const userRouter = require('./router/users');
 const homeRouter = require('./router/home');
 const applicationMiddlewareRouter = require('./middlewares/application');
 app.use(loggingMiddleware);
-app.use(bodyParser.json());
+app.use(express.json());
 // get post put delete
 
 
@@ -48,8 +47,8 @@ app.use('/',homeRouter);
 app.use('/',applicationMiddlewareRouter);
 //express --->middlewares ---> 
 
-app.listen(process.env.port||3000);
-console.log('Web Server is listening at port '+ (process.env.port || 3000));
+app.listen(process.env.port||3001);
+console.log('Web Server is listening at port '+ (process.env.port || 3001));
 
 
 

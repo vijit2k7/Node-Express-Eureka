@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to EJS!!</h1>
+    <div> Name : <%= user.name %></div>
+    <div> Stack : <%= user.stack %></div>
+    <div> Email : <%= user.email %></div>
+    <div>List of hobbies:</div>
+    <input type="text" oninput="input(event)"/>
+    <ul>
+        <% user.hobby.forEach(hobby =>{ %> 
+            <li><%= hobby %></li> 
+        <% })%>  
+    </ul>
+    <button onclick="submit()">Submit</button>
+</body>
+<script>
+    function submit(){
+
+    }
+
+    function input(e){
+        console.log('event is',e.target.value);
+    }
+</script>
+</html>
